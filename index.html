@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026 현대엘리베이터 CA 성과공유회 - GROUND ONE</title>
+    <meta name="description" content="HR을 가장 잘 이해하는 AI는 무엇이 다른가. 현대엘리베이터 CA 성과공유회 GROUND ONE을 확인하세요.">
+    
+    <!-- AOS 애니메이션 라이브러리 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <style>
+    /* Reset & Standard Style */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.5; color: #fff; background-color: #000000; width: 100%; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    ul, li { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Header */
+    header { width: 100%; background-color: #ffffff; height: 72px; position: fixed; top: 0; left: 0; z-index: 99; border-bottom: 1px solid #e5e5e5; }
+    .header-inner { width: 1400px; max-width: 92%; height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; color: #111; }
+    .hcg-logo { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; color: #000; }
+    
+    nav ul { display: flex; align-items: center; gap: 44px; }
+    nav ul li a { font-size: 18px; font-weight: 400; color: #222; transition: color 0.2s; }
+    nav ul li a:hover { color: #0066ff; }
+
+    .hcg-lang { display: inline-flex; align-items: center; gap: 6px; color: #111; font-size: 15px; font-weight: 700; }
+    .hcg-lang__icon { width: 20px; height: 20px; }
+
+    /* 1. 노이즈 레이어 스타일 (Hero Section 내부) */
+   .hero-noise {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+    /* Hero Section (확대된 폰트 레이아웃) */
+    #hero { 
+        background-color: #000000; 
+        width: 100%; 
+        height: 100vh; 
+        min-height: 720px; 
+        position: relative; 
+        padding-top: 150px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between; 
+        overflow: hidden; 
+    }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+    .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    
+    .hero-container { 
+        width: 1400px; 
+        max-width: 92%; 
+        margin: 0 auto; 
+        position: relative; 
+        z-index: 2; 
+        height: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        padding-bottom: 20px;
+    }
+    
+    .hero-content { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start; 
+        margin-bottom: 100px; 
+    }
+    
+    .hero-left { max-width: 720px; }
+    .hero-subtitle { font-size: 32px; font-weight: 500; color: #ffffff; margin-bottom: 12px; letter-spacing: -0.3px; }
+    .hero-title { font-size: 80px; font-weight: 500; color: #ffffff; margin-bottom: 28px; line-height: 1.05; letter-spacing: -1.5px; }
+    .hero-desc .highlight { color: #538cec; font-weight: 700; display: block; margin-bottom: 6px; font-size: 22px; }
+    .hero-desc { font-size: 17px; line-height: 1.6; color: #e2e8f0; margin-bottom: 36px; }
+    .hero-buttons { display: flex; gap: 16px; }
+
+    /* 버튼 스타일 */
+    .btn-hero-primary {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 60px; 
+        font-size: 20px;
+        font-weight: 500; 
+        color: #ffffff;
+        border-radius: 6px;
+        background: #000;
+        overflow: hidden;
+        isolation: isolate;
+        border: none;
+    }
+    .btn-hero-primary::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        width: 200%;
+        height: 300%;
+        background: conic-gradient(transparent 0deg, #3248cd 200deg, #7876ff 270deg, #16cbaf 330deg, transparent 360deg);
+        animation: borderRotate 3s linear infinite;
+    }
+    .btn-hero-primary::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 2px;
+        background: #080a0f;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    .btn-hero-primary:hover::after { background: #111622; }
+    
+    @keyframes borderRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .btn-hero-secondary { 
+        display: inline-flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 200px; 
+        height: 60px; 
+        font-size: 20px; 
+        font-weight: 500; 
+        color: #ffffff; 
+        background: rgba(255, 255, 255, 0.05); 
+        border: 2px solid rgba(255,255,255,0.35); 
+        border-radius: 4px; 
+        transition: 0.3s; 
+    }
+    .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+    /* Right Info Card */
+    .hero-right-card { 
+        width: 230px; 
+        background: rgba(255, 255, 255, 0.03); 
+        border: 1px solid rgba(140, 160, 255, 0.1); 
+        backdrop-filter: blur(8px); 
+        border-radius: 12px; 
+        padding: 36px 24px; 
+        box-shadow: 0 0 30px rgba(247, 247, 247, 0.35), inset 0 0 15px rgba(255, 255, 255, 0.05); 
+        transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .hero-right-card:hover {
+        background: rgba(10, 13, 22, 0.1);
+        border-color: rgba(160, 180, 255, 0.1);
+        box-shadow: 0 0 40px rgba(99, 120, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .card-item { margin-bottom: 30px; text-align: center; }
+    .card-item:last-child { margin-bottom: 0; }
+    .card-item .label { font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: 2px; margin-bottom: 8px; }
+    .card-item .val { font-size: 16px; font-weight: 500; color: #f1f5f9; line-height: 1.5; }
+
+    /* D-Day Counter */
+    .dday-container { width: 100%; position: relative; z-index: 2; margin-top: 40px; }
+    .dday-row { display: flex; justify-content: center; align-items: center; gap: 28px; }
+    .dday-box { text-align: center; }
+    .dday-num { font-size: 56px; font-weight: 500; color: #ffffff; line-height: 1; letter-spacing: -1px; }
+    .dday-label { font-size: 13px; font-weight: 100; color: #ffffff; margin-top: 10px; letter-spacing: 1.5px; }
+    .dday-colon { font-size: 40px; font-weight: 300; color: #ffffff; margin-bottom: 20px; }
+
+    /* Greeting Section */
+    #greeting {
+        width: 100%;
+        background-color: #050608;
+        position: relative;
+        padding: 140px 0;
+        overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .grid-base {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+    }
+    .grid-glow-layer {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to right, rgba(83, 140, 236, 0.6) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(83, 140, 236, 0.6) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        -webkit-mask-image: radial-gradient(circle 240px at var(--mouse-x, -500px) var(--mouse-y, -500px), black 0%, transparent 80%);
+        mask-image: radial-gradient(circle 240px at var(--mouse-x, -500px) var(--mouse-y, -500px), black 0%, transparent 80%);
+    }
+
+    .greeting-inner { width: 1000px; max-width: 90%; margin: 0 auto; position: relative; z-index: 2; text-align: center; color: #f1f5f9; }
+    .greeting-inner p { font-size: 19px; font-weight: 400; line-height: 1.8; margin-bottom: 28px; color: #e2e8f0; }
+    .greeting-inner p strong, .greeting-inner p span { font-weight: 800; color: #ffffff; }
+
+    /* Why Section */
+    #why { width: 100%; background-color: #f4f5f7; color: #111; padding: 120px 0; }
+    .why-inner { width: 1280px; max-width: 90%; margin: 0 auto; text-align: center; }
+    .section-sub { font-size: 20px; font-weight: 700; color: #437ef7; margin-bottom: 12px; }
+    .section-title { font-size: 38px; font-weight: 800; color: #111111; margin-bottom: 20px; }
+    .section-desc { font-size: 17px; color: #555555; line-height: 1.6; margin-bottom: 60px; }
+
+    .why-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .why-card {
+        background: #080b11;
+        border-radius: 12px;
+        padding: 32px 24px;
+        text-align: left;
+        width: calc(25% - 15px);
+        min-width: 260px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .why-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(67, 126, 247, 0.25);
+    }
+    .why-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(67, 126, 247, 0.35), transparent 60%);
+        pointer-events: none;
+    }
+    .why-card .card-title { font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 12px; z-index: 2; }
+    .why-card .card-desc { font-size: 15px; color: #a0aec0; line-height: 1.5; z-index: 2; }
+
+    /* 카드 하단 요소 (쉐어포인트 링크 + 하트 버튼) 추가 스타일 */
+    .why-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 16px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 5;
+    }
+
+    .sp-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #60a5fa;
+        background: rgba(96, 165, 250, 0.1);
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(96, 165, 250, 0.3);
+        transition: all 0.2s ease;
+    }
+    .sp-link-btn:hover {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+    }
+    .sp-link-btn svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+    }
+
+    .like-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        color: #a0aec0;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 4px 8px;
+        border-radius: 12px;
+    }
+    .like-btn:hover {
+        background: rgba(244, 63, 94, 0.1);
+        color: #f43f5e;
+    }
+    .like-btn.liked {
+        color: #f43f5e;
+    }
+    .like-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        transition: transform 0.2s ease, fill 0.2s ease;
+    }
+    .like-btn.liked svg {
+        fill: #f43f5e;
+        stroke: #f43f5e;
+        animation: heartPulse 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes heartPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+
+    /* Agenda Section */
+    #agenda { width: 100%; background: #080a0f; padding: 120px 0 80px; color: #fff; }
+    .agenda-inner { width: 1280px; max-width: 90%; margin: 0 auto; }
+    .agenda-inner h3 { font-size: 38px; font-weight: 800; text-align: center; margin-bottom: 60px; }
+    .agenda-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
+    .agenda-header { background: linear-gradient(90deg, #2b529a 0%, #3b429f 100%); display: flex; padding: 20px 32px; font-size: 16px; font-weight: 700; color: #ffffff; }
+    .agenda-row { display: flex; flex-wrap: wrap; padding: 24px 32px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); align-items: flex-start; }
+    .agenda-row:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+    .col-time { width: 220px; font-size: 17px; color: #a0aec0; font-weight: 500; flex-shrink: 0; }
+    .col-session { flex-grow: 1; font-size: 17px; color: #ffffff; font-weight: 600; }
+    .col-speaker { width: 220px; text-align: right; font-size: 16px; color: #60a5fa; font-weight: 600; flex-shrink: 0; }
+    .session-detail { width: 100%; margin-top: 16px; padding: 18px 22px; background: rgba(59, 130, 246, 0.12); border-radius: 8px; font-size: 15px; color: #e2e8f0; line-height: 1.6; }
+
+    /* Speakers Section */
+    #speaker { width: 100%; background: #080a0f; padding: 40px 0 120px; }
+    .speaker-inner { width: 1280px; max-width: 90%; margin: 0 auto; text-align: center; }
+    .speaker-inner h3 { font-size: 38px; font-weight: 800; margin-bottom: 60px; color: #fff; }
+    .speaker-grid { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
+    .speaker-item { width: 130px; text-align: center; }
+    .speaker-img { width: 110px; height: 110px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; background-color: #e2e8f0; }
+    .speaker-img img { width: 100%; height: 100%; object-fit: cover; }
+    .speaker-name { font-size: 17px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+    .speaker-role { font-size: 13px; color: #60a5fa; font-weight: 600; line-height: 1.3; }
+
+    /* Top Button */
+    .top-btn { position: fixed; right: 30px; bottom: 30px; width: 48px; height: 48px; border-radius: 50%; background-color: #ffffff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3); z-index: 99; cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s; }
+    .top-btn.show { opacity: 1; visibility: visible; }
+    .top-btn svg { width: 22px; height: 22px; fill: #111; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="#" class="hcg-logo">HYUNDAI ELEVATOR</a>
+            <nav>
+                <ul>
+                    <li><a href="#greeting">About</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#speaker">Speakers</a></li>
+                </ul>
+            </nav>            
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-bg">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="https://e-hcg.com/events/groundone2026/video/hero-bg.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <p class="hero-subtitle">2026 현대엘리베이터 CA 성과공유회</p>
+                        <h1 class="hero-title">GROUND ONE</h1>
+                        <div class="hero-desc">
+                            <span class="highlight">조직을 가장 잘 이해하는 사람들이 만들어가는 변화</span>
+                            2026년 본부별 Change Agent의 활약과 성과를 지금 만나보세요.
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#why" class="btn-hero-primary">성과공유 자료</a>
+                            <a href="https://portal.hdel.co.kr/Portal/Board/HEL_ChangeAgentGWP" class="btn-hero-secondary" target="blank" rel="noopener noreferrer">CA 게시판</a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-right-card">
+                        <div class="card-item">
+                            <div class="label">DATE</div>
+                            <div class="val">2026.10.16(금)<br>14:00 ~ 15:00</div>
+                        </div>
+                        <div class="card-item">
+                            <div class="label">VENUE</div>
+                            <div class="val">현대그룹빌딩 동관,<br>H-STADIUM</div>
+                        </div>
+                        <div class="card-item">
+                            <div class="label">AUDIENCE</div>
+                            <div class="val">본부별 CA,<br>Leaders, <br>구성원 평가단</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D-Day Counter -->
+                <div class="dday-container">
+                    <div class="dday-row">
+                        <div class="dday-box"><div class="dday-num" id="d-days">26</div><div class="dday-label">DAYS</div></div>
+                        <div class="dday-colon">:</div>
+                        <div class="dday-box"><div class="dday-num" id="d-hours">02</div><div class="dday-label">HOURS</div></div>
+                        <div class="dday-colon">:</div>
+                        <div class="dday-box"><div class="dday-num" id="d-mins">48</div><div class="dday-label">MINUTES</div></div>
+                        <div class="dday-colon">:</div>
+                        <div class="dday-box"><div class="dday-num" id="d-secs">08</div><div class="dday-label">SECONDS</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Greeting Section -->
+        <section id="greeting">
+            <div class="grid-base"></div>
+            <div class="grid-glow-layer" id="gridGlow"></div>
+            
+            <div class="greeting-inner">
+                <p>이제 HR에서 사람과 AI의 역할은 다시 그려져야 합니다.</p>
+                <p>HR은 AI를 단순한 업무 자동화 도구가 아니라, <strong>판단하고 신뢰하는 방식 자체를 바꾸는 기술</strong>로 마주하고 있습니다.<br>사람과 AI의 역할이 새롭게 정의되는 지금,조직에는 그 변화에 맞는 새로운 기준이 필요합니다.</p>
+                <p>그 기준은 하나의 질문에서 시작됩니다.<br><strong>조직이 AI를 신뢰하기 위해 무엇이 필요한가.</strong></p>
+                <p>HR에 적합한 AI는 무엇이 다른가. 조직은 무엇을 준비해야 하는가. 사람과 AI는 앞으로 어떻게 함께 일하게 되는가.</p>
+                <p><strong>GROUND ONE</strong>은 이 질문에서 출발합니다.</p>
+                <p style="margin-top: 36px; font-size: 16px; color: #9ca3af;">Keynote부터 ChatHRT, AI Agent Showcase, 실제 HR의 고민과 미래 비전까지.<br>하나의 흐름을 따라가며 사람과 AI가 함께 만들어갈 새로운 HR의 기준을 살펴봅니다.</p>
+            </div>
+        </section>
+
+        <!-- Why Attend Section -->
+        <section id="why">
+            <div class="why-inner">
+                <div class="section-sub">Our Stories</div>
+                <h2 class="section-title">성과를 넘어선 우리의 이야기</h2>
+                <p class="section-desc">현장에서, 조직을 가장 잘 아는 사람들이 만들어가는 변화 2026년 CA 우리들의 이야기와 성과를 확인해보세요.</p>
+                
+                <div class="why-grid">
+                    <!-- 카드 1 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div>
+                            <div class="card-title">영업 1,2본부</div>
+                            <div class="card-desc">각 본부별 업무와 구성원 특성 1줄 요약, 팀 특성 요약, 활동 요약</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-1" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-1">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">12</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 2 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div>
+                            <div class="card-title">서비스본부</div>
+                            <div class="card-desc">AI를 어디까지, 어떻게 들여야 할지 우리 조직에 맞는 판단 기준을 세울 수 있습니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-2" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-2">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">24</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 3 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div>
+                            <div class="card-title">R&D본부</div>
+                            <div class="card-desc">HR AI가 실제로 작동하는 화면을 현장에서 직접 확인할 수 있습니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-3" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-3">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">18</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 4 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div>
+                            <div class="card-title">SCM본부</div>
+                            <div class="card-desc">같은 과제를 고민하는 HR 리더들과 직접 만나 관계를 넓힐 수 있습니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-4" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-4">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">31</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 5 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                        <div>
+                            <div class="card-title">디지털전략본부</div>
+                            <div class="card-desc">다섯 번째 카드에 들어갈 내용 설명입니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-5" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-5">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">15</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 6 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                        <div>
+                            <div class="card-title">경영전략본부</div>
+                            <div class="card-desc">여섯 번째 카드에 들어갈 내용 설명입니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-6" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-6">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">9</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 카드 7 -->
+                    <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+                        <div>
+                            <div class="card-title">경영지원본부</div>
+                            <div class="card-desc">일곱 번째 카드에 들어갈 내용 설명입니다.</div>
+                        </div>
+                        <div class="why-card-footer">
+                            <a href="https://your-sharepoint-url-7" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                                자료 보기
+                            </a>
+                            <button class="like-btn" data-card-id="card-7">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span class="like-count">42</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agenda Section -->
+        <section id="agenda">
+            <div class="agenda-inner">
+                <h3>Agenda</h3>
+                <div class="agenda-table">
+                    <div class="agenda-header">
+                        <div class="col-time">Time</div>
+                        <div class="col-session">Session</div>
+                        <div class="col-speaker">Speaker</div>
+                    </div>
+                    <div class="agenda-row">
+                        <div class="col-time">14:00 ~ 14:15</div>
+                        <div class="col-session">오프닝 & 2026년 운영 경과 브리핑</div>
+                        <div class="col-speaker"></div>
+                    </div>
+                    <div class="agenda-row">
+                        <div class="col-time">14:15 ~ 14:55</div>
+                        <div class="col-session">CA와 조직문화 2026 CA, 우리들의 이야기</div>
+                        <div class="col-speaker">본부별 CA 패널</div>
+                        <div class="session-detail">
+                            본부별 주요 성과 성과가 아닌 이야기<br>역경 극복 성장의 이야기<br>우리의 이야기를 공개합니다.
+                        </div>
+                    </div>
+                    <div class="agenda-row">
+                        <div class="col-time">14:55 ~ 15:15</div>
+                        <div class="col-session">우수 CA 평가 및 시상</div>
+                        <div class="col-speaker">시상: 경영지원본부장, 인사담당</div>
+                    </div>
+                    <div class="agenda-row">
+                        <div class="col-time">15:15 ~ 15:30</div>
+                        <div class="col-session">클로징, 단체사진촬영, 석식 안내</div>
+                        <div class="col-speaker"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section id="speaker">
+            <div class="speaker-inner">
+                <h3>Speakers</h3>
+                <div class="speaker-grid">
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=2192ba57-1c33-4714-af75-8824afe8f8e6&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="방준우"></div>
+                        <div class="speaker-name">방준우 매니저</div>
+                        <div class="speaker-role">강북리모델링영업팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=8e0feaff-c43b-4d2f-abd2-566eec29ee83&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="조국경"></div>
+                        <div class="speaker-name">조국경 매니저</div>
+                        <div class="speaker-role">ES서비스팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=70b6e062-8574-495e-8401-a4bebea14e21&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="문상호"></div>
+                        <div class="speaker-name">문상호 매니저</div>
+                        <div class="speaker-role">R&D전략기획팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=2a7682ac-e8db-42e6-91f9-6719d45f18ae&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="손은호"></div>
+                        <div class="speaker-name">손은호 매니저</div>
+                        <div class="speaker-role">글로벌물류팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=0cea60c5-160c-4106-8a40-0a72a4878c40&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강동원"></div>
+                        <div class="speaker-name">강동원 매니저</div>
+                        <div class="speaker-role">디지털기획팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=5b0f28bd-386d-402f-9231-158f88b376a5&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강성준"></div>
+                        <div class="speaker-name">강성준 매니저</div>
+                        <div class="speaker-role">시장전략팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=6edca790-b291-4edb-9adc-8039df75475f&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강병진"></div>
+                        <div class="speaker-name">강병진 매니저</div>
+                        <div class="speaker-role">재정팀</div>
+                    </div>
+                    <div class="speaker-item">
+                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=a2393db4-00c9-44ee-b757-acb3bc7f9f14&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="전은지"></div>
+                        <div class="speaker-name">전은지 매니저</div>
+                        <div class="speaker-role">인재문화팀</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="top-btn" id="topBtn">
+        <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h6v8h4v-8h6z"/></svg>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        AOS.init({ once: true, easing: 'ease-out-cubic' });
+
+        const greetingSec = document.getElementById('greeting');
+        const gridGlow = document.getElementById('gridGlow');
+
+        if (greetingSec && gridGlow) {
+            greetingSec.addEventListener('mousemove', (e) => {
+                const rect = greetingSec.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                gridGlow.style.opacity = '1';
+                gridGlow.style.setProperty('--mouse-x', `${x}px`);
+                gridGlow.style.setProperty('--mouse-y', `${y}px`);
+            });
+            greetingSec.addEventListener('mouseleave', () => {
+                gridGlow.style.opacity = '0';
+            });
+        }
+
+        const topBtn = document.getElementById('topBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                topBtn.classList.add('show');
+            } else {
+                topBtn.classList.remove('show');
+            }
+        });
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const targetDate = new Date('2026-10-16T14:00:00').getTime();
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            if (diff > 0) {
+                document.getElementById('d-days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                document.getElementById('d-hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                document.getElementById('d-mins').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                document.getElementById('d-secs').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+            }
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 하트 좋아요 기능 로직 (클릭 반응, 카운트 증가 및 로컬 저장소 상태 유지)
+        document.querySelectorAll('.like-btn').forEach(button => {
+            const cardId = button.getAttribute('data-card-id');
+            const countSpan = button.querySelector('.like-count');
+            
+            const savedLiked = localStorage.getItem(`like_${cardId}_status`) === 'true';
+            let currentCount = parseInt(localStorage.getItem(`like_${cardId}_count`)) || parseInt(countSpan.innerText) || 0;
+            
+            if (savedLiked) {
+                button.classList.add('liked');
+            }
+            countSpan.innerText = currentCount;
+
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const isLiked = button.classList.contains('liked');
+
+                if (isLiked) {
+                    button.classList.remove('liked');
+                    currentCount = Math.max(0, currentCount - 1);
+                    localStorage.setItem(`like_${cardId}_status`, 'false');
+                } else {
+                    button.classList.add('liked');
+                    currentCount += 1;
+                    localStorage.setItem(`like_${cardId}_status`, 'true');
+                }
+
+                countSpan.innerText = currentCount;
+                localStorage.setItem(`like_${cardId}_count`, currentCount);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
