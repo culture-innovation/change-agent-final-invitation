@@ -2,14 +2,15 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-wdth, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>2026 현대엘리베이터 CA 토크 콘서트 - Re:DESIGN</title>
     <meta name="description" content="HR을 가장 잘 이해하는 AI는 무엇이 다른가. 현대엘리베이터 CA 토크 콘서트 Re:DESIGN을 확인하세요.">
     
-    <!-- AOS 애니메이션 라이브러리 -->
+    <!-- AOS 애니메이션 라이브러리 & Supabase SDK -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
     <style>
     /* Reset & Standard Style */
@@ -460,7 +461,7 @@
                     <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                         <div>
                             <div class="card-title">영업 1,2본부</div>
-                            <div class="card-desc">‘현엘위키’ 구축으로 업무 지식 100개를 체계화하고, AI 활용 사례 공유와 MZ 매니저 소통 워크숍·한가위 화합행사까지 연결</div>
+                            <div class="card-desc">영업 업무 가이드를 담은 ‘현엘위키’를 구축하여 업무지식 체계화, MZ 매니저 소통 · 한가위 화합행사 등 조직활성화 활동 진행</div>
                         </div>
                         <div class="why-card-footer">
                             <a href="https://your-sharepoint-url-1" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -469,7 +470,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-1">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">12</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -478,7 +479,7 @@
                     <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                         <div>
                             <div class="card-title">서비스본부</div>
-                            <div class="card-desc">조직문화 정밀진단을 시작으로 부서별 AI 활용 매뉴얼을 만들고, AI 활용 사례 공모전으로 현장의 활용 경험 확산</div>
+                            <div class="card-desc">서비스본부 조직문화 정밀진단 실시, AI 활용 사례 공유회를 통한 현장의 활용 경험 확산</div>
                         </div>
                         <div class="why-card-footer">
                             <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQBgmgZ0gT8CS6axyMjo0lpVAbftSRm15eLQOzi0ISsCiBg?e=SAP3S3" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -487,7 +488,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-2">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">24</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -505,7 +506,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-3">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">18</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -514,7 +515,7 @@
                     <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                         <div>
                             <div class="card-title">SCM본부</div>
-                            <div class="card-desc">AI 활용 업무 개선 사례를 교육하고, 구성원이 직접 자신의 업무 개선 사례를 제안하는 AI 활용 공모전 추진</div>
+                            <div class="card-desc">본부 내 업무 자료의 팀 자산화 수준을 점검하고, 구성원이 직접 자신의 업무 개선 사례를 제안하는 AI 활용 공모전 추진</div>
                         </div>
                         <div class="why-card-footer">
                             <a href="https://your-sharepoint-url-4" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -523,7 +524,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-4">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">31</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -541,7 +542,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-5">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">15</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -559,7 +560,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-6">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">9</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -568,7 +569,7 @@
                     <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                         <div>
                             <div class="card-title">경영지원본부</div>
-                            <div class="card-desc">M365 협업 활용 문화를 확산하고 AI 기반 업무 혁신 사례를 발굴하는 한편, 신입사원 소개 등 구성원 간 연결 강화</div>
+                            <div class="card-desc">M365 협업 활용 문화를 확산하고 AI 기반 업무 혁신 사례 발굴, 신입 매니저 소개 등 구성원 간 연결 강화</div>
                         </div>
                         <div class="why-card-footer">
                             <a href="https://your-sharepoint-url-7" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -577,7 +578,7 @@
                             </a>
                             <button class="like-btn" data-card-id="card-7">
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                <span class="like-count">42</span>
+                                <span class="like-count">0</span>
                             </button>
                         </div>
                     </div>
@@ -677,7 +678,12 @@
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    // Supabase 설정
+    const SUPABASE_URL = 'https://rgdnkbzukfpxdrkvqhvg.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_3rUYtdlvJZPenRm0zAnUfw_RaXzvakC';
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    document.addEventListener('DOMContentLoaded', async function () {
         AOS.init({ once: true, easing: 'ease-out-cubic' });
 
         const greetingSec = document.getElementById('greeting');
@@ -723,35 +729,78 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // 하트 좋아요 기능 로직 (클릭 반응, 카운트 증가 및 로컬 저장소 상태 유지)
+        // -------------------------------------------------------------
+        // Supabase 연동 하트 좋아요 로직 (invitation_card_likes 테이블 연동)
+        // -------------------------------------------------------------
+        async function fetchLikes() {
+            const { data, error } = await supabaseClient
+                .from('invitation_card_likes')
+                .select('card_id, like_count');
+
+            if (error) {
+                console.error('좋아요 데이터 로드 실패:', error);
+                return;
+            }
+
+            if (data) {
+                data.forEach(item => {
+                    const button = document.querySelector(`.like-btn[data-card-id="${item.card_id}"]`);
+                    if (button) {
+                        const countSpan = button.querySelector('.like-count');
+                        if (countSpan) countSpan.innerText = item.like_count;
+                    }
+                });
+            }
+        }
+
+        // 페이지 로드 시 최신 DB 숫자로 업데이트
+        await fetchLikes();
+
+        // 클릭 이벤트 등록 (서버 수량 증감 + 내 브라우저 클릭 상태 기억)
         document.querySelectorAll('.like-btn').forEach(button => {
             const cardId = button.getAttribute('data-card-id');
             const countSpan = button.querySelector('.like-count');
-            
-            const savedLiked = localStorage.getItem(`like_${cardId}_status`) === 'true';
-            let currentCount = parseInt(localStorage.getItem(`like_${cardId}_count`)) || parseInt(countSpan.innerText) || 0;
-            
-            if (savedLiked) {
+
+            // 내가 이전에 하트를 눌렀는지 로컬스토리지 확인
+            const isLikedLocal = localStorage.getItem(`like_${cardId}_liked`) === 'true';
+            if (isLikedLocal) {
                 button.classList.add('liked');
             }
-            countSpan.innerText = currentCount;
 
-            button.addEventListener('click', function (e) {
+            button.addEventListener('click', async function (e) {
                 e.preventDefault();
-                const isLiked = button.classList.contains('liked');
+                const isCurrentlyLiked = button.classList.contains('liked');
+                let currentVal = parseInt(countSpan.innerText) || 0;
+                let newVal = isCurrentlyLiked ? Math.max(0, currentVal - 1) : currentVal + 1;
 
-                if (isLiked) {
+                // UI 즉시 반영
+                if (isCurrentlyLiked) {
                     button.classList.remove('liked');
-                    currentCount = Math.max(0, currentCount - 1);
-                    localStorage.setItem(`like_${cardId}_status`, 'false');
+                    localStorage.setItem(`like_${cardId}_liked`, 'false');
                 } else {
                     button.classList.add('liked');
-                    currentCount += 1;
-                    localStorage.setItem(`like_${cardId}_status`, 'true');
+                    localStorage.setItem(`like_${cardId}_liked`, 'true');
                 }
+                countSpan.innerText = newVal;
 
-                countSpan.innerText = currentCount;
-                localStorage.setItem(`like_${cardId}_count`, currentCount);
+                // Supabase DB 업데이트
+                const { error } = await supabaseClient
+                    .from('invitation_card_likes')
+                    .update({ like_count: newVal })
+                    .eq('card_id', cardId);
+
+                if (error) {
+                    console.error('좋아요 업데이트 실패:', error);
+                    // 실패 시 UI 원복
+                    countSpan.innerText = currentVal;
+                    if (isCurrentlyLiked) {
+                        button.classList.add('liked');
+                        localStorage.setItem(`like_${cardId}_liked`, 'true');
+                    } else {
+                        button.classList.remove('liked');
+                        localStorage.setItem(`like_${cardId}_liked`, 'false');
+                    }
+                }
             });
         });
     });
