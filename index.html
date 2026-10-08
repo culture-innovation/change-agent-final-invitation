@@ -15,7 +15,7 @@
     <style>
     /* Reset & Standard Style */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.5; color: #fff; background-color: #000000; width: 100%; overflow-x: hidden; }
+    body { font-family: "NeoHyundai", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.5; color: #fff; background-color: #000000; width: 100%; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     ul, li { list-style: none; }
     img { max-width: 100%; height: auto; display: block; }
@@ -119,7 +119,7 @@
         z-index: -1;
         inset: 2px;
         background: #080a0f;
-        border-radius: 4px;
+        border-radius: 6px;
         transition: background 0.3s;
     }
     .btn-hero-primary:hover::after { background: #111622; }
@@ -140,7 +140,7 @@
         color: #ffffff; 
         background: rgba(255, 255, 255, 0.05); 
         border: 2px solid rgba(255,255,255,0.35); 
-        border-radius: 4px; 
+        border-radius: 6px; 
         transition: 0.3s; 
     }
     .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.15); }
@@ -151,16 +151,10 @@
         background: rgba(255, 255, 255, 0.03); 
         border: 1px solid rgba(140, 160, 255, 0.1); 
         backdrop-filter: blur(8px); 
-        border-radius: 12px; 
+        border-radius: 12px;
         padding: 36px 24px; 
-        box-shadow: 0 0 30px rgba(247, 247, 247, 0.35), inset 0 0 15px rgba(255, 255, 255, 0.05); 
+        box-shadow: 0 0 30px rgba(247, 247, 247, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.05); 
         transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
-    }
-
-    .hero-right-card:hover {
-        background: rgba(10, 13, 22, 0.1);
-        border-color: rgba(160, 180, 255, 0.1);
-        box-shadow: 0 0 40px rgba(99, 120, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
     .card-item { margin-bottom: 30px; text-align: center; }
@@ -229,11 +223,11 @@
     .why-card {
         background: #080b11;
         border-radius: 12px;
-        padding: 32px 24px;
+        padding: 28px 20px 20px;
         text-align: left;
         width: calc(25% - 15px);
         min-width: 260px;
-        height: 280px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -242,11 +236,33 @@
         box-shadow: 0 12px 32px rgba(0,0,0,0.15);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
     }
+    
+    .card-cover-img {
+    width: 100%;
+    height: 140px; /* 표지 이미지 높이 */
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px 0 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .card-cover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 설정 */
+    transition: transform 0.3s ease;
+    }
+
+    .why-card:hover .card-cover-img img {
+    transform: scale(1.05); /* 카드 호버 시 이미지 살짝 확대 효과 */
+    }
 
     .why-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(67, 126, 247, 0.25);
     }
+    
     .why-card::before {
         content: '';
         position: absolute;
@@ -254,6 +270,7 @@
         background: radial-gradient(circle at 80% 20%, rgba(67, 126, 247, 0.35), transparent 60%);
         pointer-events: none;
     }
+    
     .why-card .card-title { font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 12px; z-index: 2; }
     .why-card .card-desc { font-size: 15px; color: #a0aec0; line-height: 1.5; z-index: 2; }
 
@@ -338,7 +355,7 @@
     #agenda { width: 100%; background: #080a0f; padding: 120px 0 80px; color: #fff; }
     .agenda-inner { width: 1280px; max-width: 90%; margin: 0 auto; }
     .agenda-inner h3 { font-size: 38px; font-weight: 800; text-align: center; margin-bottom: 60px; }
-    .agenda-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
+    .agenda-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.02); }
     .agenda-header { background: linear-gradient(90deg, #2b529a 0%, #3b429f 100%); display: flex; padding: 20px 32px; font-size: 16px; font-weight: 700; color: #ffffff; }
     .agenda-row { display: flex; flex-wrap: wrap; padding: 24px 32px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); align-items: flex-start; }
     .agenda-row:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
@@ -348,10 +365,10 @@
     .session-detail { width: 100%; margin-top: 16px; margin-left: 220px; padding: 18px 22px; background: rgba(59, 130, 246, 0.12); border-radius: 0px; font-size: 15px; color: #e2e8f0; line-height: 1.6; }
 
     /* Speakers Section */
-    #speaker { width: 100%; background: #080a0f; padding: 40px 0 250px; } 
-    .speaker-inner { width: 1280px; max-width: 95%; margin: 0 auto; text-align: center; }
+    #speaker { width: 100%; background: #080a0f; padding: 10px 0 200px; } 
+    .speaker-inner { width: 1380px; max-width: 95%; margin: 0 auto; text-align: center; }
     .speaker-inner h3 { font-size: 38px; font-weight: 800; margin-bottom: 60px; color: #fff; }
-    .speaker-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: nowrap; }
+    .speaker-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: nowrap; }
     .speaker-item { width: 130px; text-align: center; }
     .speaker-img { width: 110px; height: 110px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; background-color: #e2e8f0; }
     .speaker-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -463,8 +480,11 @@
                             <div class="card-title">영업 1,2본부</div>
                             <div class="card-desc">영업 업무 가이드를 담은 ‘현엘위키’를 구축하여 업무지식 체계화, MZ 매니저 소통 · 한가위 화합행사 등 조직활성화 활동 진행</div>
                         </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-sales.PNG" alt="영업 1,2본부 자료 표지">
+                        </div>
                         <div class="why-card-footer">
-                            <a href="https://your-sharepoint-url-1" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                            <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQDN4f7HAzYfT6QPV6vQpn0CAZT4gWsDMscuEaa1rLaDtDM?e=7PZ3aA" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                                 자료 보기
                             </a>
@@ -480,6 +500,9 @@
                         <div>
                             <div class="card-title">서비스본부</div>
                             <div class="card-desc">서비스본부 조직문화 정밀진단 실시, AI 활용 사례 공유회를 통한 현장의 활용 경험 확산</div>
+                        </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-service.PNG" alt="영업 1,2본부 자료 표지">
                         </div>
                         <div class="why-card-footer">
                             <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQBgmgZ0gT8CS6axyMjo0lpVAbftSRm15eLQOzi0ISsCiBg?e=SAP3S3" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -499,8 +522,11 @@
                             <div class="card-title">R&D본부</div>
                             <div class="card-desc">‘R&D Connect-Up’으로 소통의 접점을 만들고, M365·Teams의 숨은 기능을 직접 사용하며 현업 적용성 분석</div>
                         </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-rnd.PNG" alt="영업 1,2본부 자료 표지">
+                        </div>
                         <div class="why-card-footer">
-                            <a href="https://your-sharepoint-url-3" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                            <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQDPFb-tPKyaTJy87LDMI2zgAT1PPTa_WCQPmfNa_ZNjWsE?e=wzSerf" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                                 자료 보기
                             </a>
@@ -517,8 +543,11 @@
                             <div class="card-title">SCM본부</div>
                             <div class="card-desc">본부 내 업무 자료의 팀 자산화 수준을 점검하고, 구성원이 직접 자신의 업무 개선 사례를 제안하는 AI 활용 공모전 추진</div>
                         </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-scm.PNG" alt="영업 1,2본부 자료 표지">
+                        </div>
                         <div class="why-card-footer">
-                            <a href="https://your-sharepoint-url-4" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                            <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQDrLOPMruvYRrPChz2sJCzwAYNRo_auFoxCkZ_RelGVuiQ?e=mSB8Cd" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                                 자료 보기
                             </a>
@@ -535,8 +564,11 @@
                             <div class="card-title">디지털전략본부</div>
                             <div class="card-desc">Gemini를 활용한 SQL 기초교육부터 데이터 테이블·값 정의까지, 현업의 ‘데이터 셀프서비스’ 기반 구축</div>
                         </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-digital.PNG" alt="영업 1,2본부 자료 표지">
+                        </div>
                         <div class="why-card-footer">
-                            <a href="https://your-sharepoint-url-5" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                            <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQCH-YCN-J2qRIBOr8nPyay-AWNmCY-hfih5qWMxhRgm_9U?e=jcLUnU" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                                 자료 보기
                             </a>
@@ -552,6 +584,9 @@
                         <div>
                             <div class="card-title">경영전략본부</div>
                             <div class="card-desc">업무 자산 데이터 관리 가이드를 만들고, Microsoft Loop 활용법과 AI 활용 사례 발굴·공유</div>
+                        </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-strategy.PNG" alt="영업 1,2본부 자료 표지">
                         </div>
                         <div class="why-card-footer">
                             <a href="https://claude.ai/artifact/CoBDWV3Cg7tWdtqRuusmwW" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
@@ -569,10 +604,13 @@
                     <div class="why-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
                         <div>
                             <div class="card-title">경영지원본부</div>
-                            <div class="card-desc">M365 협업 활용 문화를 확산하고 AI 기반 업무 혁신 사례 발굴, 신입 매니저 소개 등 구성원 간 연결 강화</div>
+                            <div class="card-desc">M365 협업, 업무 혁신사례 발굴 등 AI 업무 활용 및 신입 매니저 소개, 네컷 만화 제작을 통한 구성원 간 연결 강화</div>
+                        </div>
+                        <div class="card-cover-img">
+                            <img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/material-support.PNG" alt="영업 1,2본부 자료 표지">
                         </div>
                         <div class="why-card-footer">
-                            <a href="https://your-sharepoint-url-7" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
+                            <a href="https://hyundaigrp.sharepoint.com/:b:/s/ChangeAgent2026_HD/IQCRuPw5ngALToat4ahYCPbLAdiRN-2sSM_vcDamar7urDU?e=J6K3jH" target="_blank" rel="noopener noreferrer" class="sp-link-btn">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                                 자료 보기
                             </a>
@@ -594,7 +632,7 @@
                     <div class="agenda-header">
                         <div class="col-time">Time</div>
                         <div class="col-session">Session</div>
-                        <div class="col-speaker">Speaker</div>
+
                     </div>
                     <div class="agenda-row">
                         <div class="col-time">14:00 ~ 14:15</div>
@@ -635,42 +673,42 @@
                 <h3>Speakers</h3>
                 <div class="speaker-grid">
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=2192ba57-1c33-4714-af75-8824afe8f8e6&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="방준우"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/jwbang.jpg" alt="방준우"></div>
                         <div class="speaker-name">방준우 매니저</div>
                         <div class="speaker-role">강북리모델링영업팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=8e0feaff-c43b-4d2f-abd2-566eec29ee83&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="조국경"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/kkjo.jpg" alt="조국경"></div>
                         <div class="speaker-name">조국경 매니저</div>
                         <div class="speaker-role">ES서비스팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=70b6e062-8574-495e-8401-a4bebea14e21&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="문상호"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/shmoon.jpg" alt="문상호"></div>
                         <div class="speaker-name">문상호 매니저</div>
                         <div class="speaker-role">R&D전략기획팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=2a7682ac-e8db-42e6-91f9-6719d45f18ae&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="손은호"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/ehson.jpg" alt="손은호"></div>
                         <div class="speaker-name">손은호 매니저</div>
                         <div class="speaker-role">글로벌물류팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=0cea60c5-160c-4106-8a40-0a72a4878c40&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강동원"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/dwkang.jpg" alt="강동원"></div>
                         <div class="speaker-name">강동원 매니저</div>
                         <div class="speaker-role">디지털기획팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=5b0f28bd-386d-402f-9231-158f88b376a5&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강성준"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/sjkang.jpg" alt="강성준"></div>
                         <div class="speaker-name">강성준 매니저</div>
                         <div class="speaker-role">시장전략팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=6edca790-b291-4edb-9adc-8039df75475f&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="강병진"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/bjkang.jpg" alt="강병진"></div>
                         <div class="speaker-name">강병진 매니저</div>
                         <div class="speaker-role">재정팀</div>
                     </div>
                     <div class="speaker-item">
-                        <div class="speaker-img"><img src="https://portal.hdel.co.kr/Portal/Board/Controls/ImageFileViewer.ashx?ImageAttachID=a2393db4-00c9-44ee-b757-acb3bc7f9f14&BoardId=9f06c829-4bed-4e4a-83d0-e8bd81804bb4" alt="전은지"></div>
+                        <div class="speaker-img"><img src="https://rgdnkbzukfpxdrkvqhvg.supabase.co/storage/v1/object/public/ca-images/ejjeon.jpg" alt="전은지"></div>
                         <div class="speaker-name">전은지 매니저</div>
                         <div class="speaker-role">인재문화팀</div>
                     </div>
